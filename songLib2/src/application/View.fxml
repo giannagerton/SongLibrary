@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="436.0" prefWidth="571.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="application.Controller">
+   <children>
+      <AnchorPane layoutY="-18.0" prefHeight="424.0" prefWidth="543.0" AnchorPane.bottomAnchor="-69.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-70.0" AnchorPane.topAnchor="-18.0">
+         <children>
+            <ListView fx:id="songList" layoutX="61.0" layoutY="94.0" prefHeight="239.0" prefWidth="459.0">
+               <effect>
+                  <BoxBlur />
+               </effect>
+            </ListView>
+            <Text layoutX="235.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Song:" wrappingWidth="85.33333234663866" />
+            <GridPane layoutX="61.0" layoutY="382.0" prefHeight="30.0" prefWidth="413.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.33331298828125" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.33335367838544" minWidth="10.0" prefWidth="90.66668192545575" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="117.99997965494794" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.00004069010419" minWidth="10.0" prefWidth="151.33335367838544" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="newSong" prefHeight="25.0" prefWidth="116.0" promptText="name" />
+                  <TextField fx:id="newSong" promptText="artist" GridPane.columnIndex="1" />
+                  <TextField prefHeight="25.0" prefWidth="96.0" promptText="album(optional)" GridPane.columnIndex="2" />
+                  <TextField prefHeight="25.0" prefWidth="51.0" promptText="year(optonal)" GridPane.columnIndex="3" />
+               </children>
+            </GridPane>
+            <Text layoutX="53.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Now Playing:" wrappingWidth="75.99999822676182" />
+            <TextArea fx:id="songCurrent" layoutX="146.0" layoutY="42.0" prefHeight="41.0" prefWidth="289.0" />
+            <Button layoutX="494.0" layoutY="384.0" mnemonicParsing="false" text="Submit" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
