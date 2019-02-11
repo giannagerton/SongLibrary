@@ -1,0 +1,29 @@
+package application;
+
+public class Song {
+
+		private static int idCount = 0;
+
+		int id;
+		String name;
+		String artist;
+		String album;
+		int year;
+
+		Song(String name,String artist, String album, int year){
+
+			Song.idCount++;
+			this.id = idCount;
+			this.name = name;
+			this.artist = artist;
+			this.album = album;
+			this.year = year;
+		}
+
+
+		public int getId(){
+			return this.id;
+		}
+
+
+}

@@ -1,0 +1,16 @@
+package application;
+
+public class Song {
+
+		static int idCount = 0;
+
+		int id;
+		String name;
+		String artist;
+		String album;
+		int year;
+		
+		Song(String name,String )
+
+
+}
