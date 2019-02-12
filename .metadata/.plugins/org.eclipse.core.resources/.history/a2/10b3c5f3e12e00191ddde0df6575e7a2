@@ -101,9 +101,6 @@ public class Controller {
 			}else if(!year.equals("") && !isNumber(year)){
 				displayAlert("Error", "Invaild song year!");
 
-			}else if(isDuplicate(name,artist)){
-				displayAlert("Error","Song already added!");
-			
 			}else{
 
 				
@@ -123,7 +120,7 @@ public class Controller {
 				
 				displayAlert("line 117","song added to json");
 				updateListView();
-			
+				displayAlert("line apple","!!1song added to json");
 			}
 		}
 	}
@@ -164,28 +161,9 @@ public class Controller {
 	}
 
 	
-	//searches through observableList and see if there's any duplicate
-	//true = is duplicate || false = not duplicate
-	public boolean isDuplicate(String name, String artist){
-	
-		name = name.toLowerCase();
-		artist = artist.toLowerCase();
-		System.out.println("NAME: "+ name + " " + artist);
-		for(int i = 0; i < obsList.size(); i ++){
-			
-			String tName = obsList.get(i).name.toLowerCase();
-			String tArtist = obsList.get(i).artist.toLowerCase();
-			System.out.println(tName + " " + tArtist);
-			if(name.equals(tName) && artist.equals(tArtist)){
-				return true;
-			}
-		
-		}
-		return false;	
-	}
-	
-	public void showItem(Stage mainStage){
-		Song curr = listView.getSelectionModel().getSelectedItem();
+	//INCOMPLETE
+	private void showItem(Stage mainStage){
+		Song song = listView.getSelectionModel().getSelectedItem();
 	}
 	
 	public void updateJson() {

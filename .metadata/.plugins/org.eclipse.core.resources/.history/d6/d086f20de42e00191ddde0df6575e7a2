@@ -168,7 +168,7 @@ public class Controller {
 	//true = is duplicate || false = not duplicate
 	public boolean isDuplicate(String name, String artist){
 	
-		name = name.toLowerCase();
+		name = artist.toLowerCase();
 		artist = artist.toLowerCase();
 		System.out.println("NAME: "+ name + " " + artist);
 		for(int i = 0; i < obsList.size(); i ++){
