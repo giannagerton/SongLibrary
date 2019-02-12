@@ -35,8 +35,6 @@ public class Controller {
 	private ObservableList<Song> obsList;
 	@FXML ListView<Song> listView;
 	@FXML Button delete;
-	@FXML Button edit;
-
 
 	//variables involving add new songs
 	@FXML TextField newSongName;
@@ -92,7 +90,7 @@ public class Controller {
 
 	}
 
-	public void deleteSong(ActionEvent e){
+	public void delete(ActionEvent e){
 		Button b = (Button)e.getSource();
 		if(b == delete){
 			Song curr = listView.getSelectionModel().getSelectedItem();
@@ -102,27 +100,13 @@ public class Controller {
 				Alert alert = new Alert(AlertType.CONFIRMATION);
 				alert.setTitle("Confirmation");
 				alert.setContentText("Confirm song deletion");
-				Optional<ButtonType> choice = alert.showAndWait();
+				Optional<ButtonType> result = alert.showAndWait();
 				
-				if(choice.get() == ButtonType.OK){
-					
-				
-					jsonArray.remove(getJsonIndex(curr.name,curr.artist));
-					updateJson();
-					obsList.remove(curr);
-					displayAlert("Deletion", "Successfully deleted " + curr.name+ " by " + curr.artist);
-				}
 				
 			}
 		}
-	}	
-	
-	public void editSong(ActionEvent e){
-		Button b = (Button)e.getSource();
-		if(b == edit){
-			
-		}
 	}
+
 	//occurs when the submit button for a new song is pressed
 	public void addNewSong(ActionEvent e){
 		Button b = (Button)e.getSource();
@@ -240,17 +224,10 @@ public class Controller {
             e1.printStackTrace();
         }
 	}
-	
-	public int getJsonIndex(String name,String artist){
-		
-		for(int i = 0; i < jsonArray.size();i++){
-			JsonObject temp = (JsonObject) jsonArray.get(i);
-			String n = temp.get("name").getAsString();
-			String a = temp.get("artist").getAsString();
-			if(name.equals(n) && artist.equals(a)){
-				return i;
-			}
-		}
-		return -1;
+	//list all songs
+	public ObservableList<Song> listSongs(){
+
+		return null;
+
 	}
 }
