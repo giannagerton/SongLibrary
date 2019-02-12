@@ -7,6 +7,5 @@ COMPLETED:<br />
   <br />
  TO-DO<br />
   -editing<br />
-  -checking duplicates (now working on -bw)<br />
   -deleting song  (now working on -bw)<br />
   -sorting by song name<br />
