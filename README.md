@@ -6,5 +6,5 @@ COMPLETED:<br />
   -checking duplicates 2/12/2019 <br />
   -delete song <br />
  TO-DO<br />
-  -editing<br />
-  -sorting by song name   (now working on -bw)v<br />
+  -editing song (now working on -bw)<br />
+  -sorting by song name   <br />
