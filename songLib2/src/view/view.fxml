@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -34,14 +33,6 @@
             </GridPane>
             <Text layoutX="33.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Now Playing:" wrappingWidth="75.99999822676182" />
             <Button fx:id="newSongSubmit" layoutX="493.0" layoutY="411.0" mnemonicParsing="false" onAction="#addNewSong" text="Submit" />
-            <TableView fx:id="songTable" layoutX="71.0" layoutY="132.0" prefHeight="239.0" prefWidth="459.0">
-              <columns>
-                <TableColumn fx:id="tableName" prefWidth="128.6666603088379" text="name" />
-                <TableColumn fx:id="tableArtist" prefWidth="122.00001525878906" text="artist" />
-                  <TableColumn fx:id="tableAlbum" prefWidth="98.6666259765625" text="album" />
-                  <TableColumn fx:id="tableYear" prefWidth="112.66665649414062" text="year" />
-              </columns>
-            </TableView>
             <GridPane layoutX="109.0" layoutY="62.0" prefHeight="56.0" prefWidth="349.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -61,6 +52,7 @@
             </GridPane>
             <Button layoutX="477.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Edit" />
             <Button layoutX="476.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Delete" />
+            <ListView fx:id="listView" layoutX="193.0" layoutY="152.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
    </children>

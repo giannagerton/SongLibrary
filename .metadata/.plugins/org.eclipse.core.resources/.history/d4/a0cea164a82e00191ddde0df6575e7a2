@@ -157,7 +157,7 @@ public class Controller {
 
 	
 	//INCOMPLETE
-	private void showItem(Stage mainStage){
+	private void displaySong(Stage mainStage){
 		Song song = listView.getSelectionModel().getSelectedItem();
 	}
 	

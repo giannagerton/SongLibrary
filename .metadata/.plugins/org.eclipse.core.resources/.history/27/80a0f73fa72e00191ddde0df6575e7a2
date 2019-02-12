@@ -27,7 +27,7 @@ public class Controller {
 	@FXML TextArea songCurrent;
 
 	//variables involving listing all songs
-	private ObservableList<Song> obsList;
+	private ObservableList<Song> songList;
 	@FXML ListView<Song> listView;
 
 
@@ -56,7 +56,7 @@ public class Controller {
 
 	public void start(Stage mainStage) throws  FileNotFoundException {
 
-		obsList = FXCollections.observableArrayList();
+		songList = FXCollections.observableArrayList();
 
 		gson = new Gson();
 		jsonParser = new JsonParser();
@@ -64,24 +64,24 @@ public class Controller {
 		jsonObj = jsonRoot.getAsJsonObject();
 		jsonArray = jsonObj.getAsJsonArray("songList");
 
-		for(int i = 0; i < jsonArray.size();i++) {
-			obsList.add(gson.fromJson(jsonArray.get(i), Song.class));
+		/*for(int i = 0; i < jsonArray.size();i++) {
+			songList.add(gson.fromJson(jsonArray.get(i), Song.class));
 		}
-		
-		listView.setItems(obsList);
-		updateListView();
-
-		listView.getSelectionModel().select(0);
+		*/
+		//table.setItems(songList);
 
 
-	    showItem(mainStage);
-	    listView
+		//table.getSelectionModel().select(0);
+
+
+	    /*showItem(mainStage);
+	    table
 	       .getSelectionModel()
 	       .selectedIndexProperty()
 	       .addListener(
 	          (obs, oldVal, newVal) ->
 	              showItem(mainStage));
-	     
+	     */
 
 	}
 
@@ -115,7 +115,7 @@ public class Controller {
 				updateJson();
 				displayAlert("line 117","song added to json");
 				updateListView();
-				displayAlert("line apple","!!1song added to json");
+
 			}
 		}
 	}
@@ -155,12 +155,7 @@ public class Controller {
 		return true;
 	}
 
-	
-	//INCOMPLETE
-	private void showItem(Stage mainStage){
-		Song song = listView.getSelectionModel().getSelectedItem();
-	}
-	
+
 	public void updateJson() {
 		try(FileWriter writer = new FileWriter("src/savedSongs.json")) {
 			Gson gsonBuilder = new GsonBuilder().setPrettyPrinting().create();

@@ -28,4 +28,6 @@
 			<item value="org.eclipse.ui.Other"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+	</section>
 </section>

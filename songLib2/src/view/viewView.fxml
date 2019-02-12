@@ -52,7 +52,7 @@
             </GridPane>
             <Button layoutX="477.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Edit" />
             <Button layoutX="476.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Delete" />
-            <ListView fx:id="listView" layoutX="193.0" layoutY="152.0" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="listV" layoutX="203.0" layoutY="143.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
    </children>

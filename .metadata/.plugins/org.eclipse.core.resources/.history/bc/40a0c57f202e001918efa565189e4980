@@ -7,8 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -27,9 +25,12 @@ public class Controller {
 	@FXML TextArea songCurrent;
 
 	//variables involving listing all songs
-	private ObservableList<Song> obsList;
-	@FXML ListView<Song> listView;
-
+	private ObservableList<Song> songList;
+	@FXML TableView<Song> table;
+	@FXML TableColumn<Song,String> tableName;
+	@FXML TableColumn<Song,String> tableArtist;
+	@FXML TableColumn<Song,String> tableAlbum;
+	@FXML TableColumn<Song,String> tableYear;
 
 	//variables involving add new songs
 	@FXML TextField newSongName;
@@ -56,7 +57,7 @@ public class Controller {
 
 	public void start(Stage mainStage) throws  FileNotFoundException {
 
-		obsList = FXCollections.observableArrayList();
+		songList = FXCollections.observableArrayList();
 
 		gson = new Gson();
 		jsonParser = new JsonParser();
@@ -64,24 +65,24 @@ public class Controller {
 		jsonObj = jsonRoot.getAsJsonObject();
 		jsonArray = jsonObj.getAsJsonArray("songList");
 
-		for(int i = 0; i < jsonArray.size();i++) {
-			obsList.add(gson.fromJson(jsonArray.get(i), Song.class));
+		/*for(int i = 0; i < jsonArray.size();i++) {
+			songList.add(gson.fromJson(jsonArray.get(i), Song.class));
 		}
-		
-		listView.setItems(obsList);
-		updateListView();
-
-		listView.getSelectionModel().select(0);
+		*/
+		//table.setItems(songList);
 
 
-	    showItem(mainStage);
-	    listView
+		//table.getSelectionModel().select(0);
+
+
+	    /*showItem(mainStage);
+	    table
 	       .getSelectionModel()
 	       .selectedIndexProperty()
 	       .addListener(
 	          (obs, oldVal, newVal) ->
 	              showItem(mainStage));
-	     
+	     */
 
 	}
 
@@ -95,27 +96,26 @@ public class Controller {
 			String artist = newSongArtist.getText();
 			String year = newSongYear.getText();
 			String album = newSongAlbum.getText();
-
+			
 			if(name.equals("")  || artist.equals("")){
 				 displayAlert("Error", "Song name and artist can not be empty!");
 			}else if(!year.equals("") && !isNumber(year)){
 				displayAlert("Error", "Invaild song year!");
 
 			}else{
-
+			
 				Song newSong = new Song(name,artist,year,album);
 				JsonObject jsonTemp = new JsonObject();
 
 				jsonTemp.addProperty("name", name);
 				jsonTemp.addProperty("artist", artist);
 				jsonTemp.addProperty("album", album);
-				jsonTemp.addProperty("year", year);
+				jsonTemp.addProperty("artist", year);
 				jsonArray.add(jsonTemp);
 
 				updateJson();
 				displayAlert("line 117","song added to json");
-				updateListView();
-				displayAlert("line apple","!!1song added to json");
+				
 			}
 		}
 	}
@@ -125,41 +125,17 @@ public class Controller {
 		alert.setHeaderText(null);
 		alert.setContentText(content);
 		alert.showAndWait();
-
+		
 	}
-
-	public void updateListView(){
-		listView.setCellFactory(list-> new ListCell<Song>(){
-			@Override
-			protected void updateItem(Song song,boolean e){
-				super.updateItem(song,e);
-				if(song == null){
-					setText("");
-				}else{
-					setText(song.name + " | " + song.artist);
-				}
-			}
-
-		});
-
-	}
-
-
-
 	public boolean isNumber(String string){
-		try{
-		    int temp = Integer.parseInt(string);
-		  }catch(NumberFormatException nfe)  {
-			  return false;
-		  }
-		return true;
+		try{  
+		    int temp = Integer.parseInt(string);  
+		  }catch(NumberFormatException nfe)  {  
+			  return false;  
+		  }  
+		return true; 
 	}
-
 	
-	//INCOMPLETE
-	private void showItem(Stage mainStage){
-		Song song = listView.getSelectionModel().getSelectedItem();
-	}
 	
 	public void updateJson() {
 		try(FileWriter writer = new FileWriter("src/savedSongs.json")) {
