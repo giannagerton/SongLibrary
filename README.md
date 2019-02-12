@@ -1,7 +1,7 @@
 # SongLibrary
 
 COMPLETED:
-  -save songs to json file (savedSong.json)\\
+  -save songs to json file (savedSong.json)<br />
   -display song to list view
   
  TO-DO
