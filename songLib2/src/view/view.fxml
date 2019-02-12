@@ -44,10 +44,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField />
-                  <TextField GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="2" />
-                  <TextField GridPane.columnIndex="3" />
+                  <TextField fx:id="currName" />
+                  <TextField fx:id="currArtist" GridPane.columnIndex="1" />
+                  <TextField fx:id="currAlbum" GridPane.columnIndex="2" />
+                  <TextField fx:id="currYear" GridPane.columnIndex="3" />
                </children>
             </GridPane>
             <Button layoutX="477.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Edit" />

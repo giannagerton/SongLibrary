@@ -24,10 +24,7 @@ import com.google.gson.*;
 
 public class Controller {
 
-	@FXML TextField currName;
-	@FXML TextField currArtist;
-	@FXML TextField currAlbum;
-	@FXML TextField currYear;
+	@FXML TextArea songCurrent;
 
 	//variables involving listing all songs
 	private ObservableList<Song> obsList;
@@ -147,7 +144,7 @@ public class Controller {
 				if(song == null){
 					setText("");
 				}else{
-					setText(song.name + " - " + song.artist);
+					setText(song.name + " | " + song.artist);
 				}
 			}
 
@@ -173,7 +170,7 @@ public class Controller {
 	
 		name = name.toLowerCase();
 		artist = artist.toLowerCase();
-		
+		System.out.println("NAME: "+ name + " " + artist);
 		for(int i = 0; i < obsList.size(); i ++){
 			
 			String tName = obsList.get(i).name.toLowerCase();
@@ -189,14 +186,6 @@ public class Controller {
 	
 	public void showItem(Stage mainStage){
 		Song curr = listView.getSelectionModel().getSelectedItem();
-		//if list is not empty
-		if(curr != null){
-			currName.setText(curr.name);
-			currArtist.setText(curr.artist);
-			currAlbum.setText(curr.album);
-			currYear.setText(curr.year);
-			
-		}
 	}
 	
 	public void updateJson() {

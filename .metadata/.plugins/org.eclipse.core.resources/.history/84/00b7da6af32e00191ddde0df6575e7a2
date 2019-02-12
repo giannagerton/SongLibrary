@@ -24,10 +24,10 @@ import com.google.gson.*;
 
 public class Controller {
 
-	@FXML TextField currName;
-	@FXML TextField currArtist;
-	@FXML TextField currAlbum;
-	@FXML TextField currYear;
+	@FXML TextArea currName;
+	@FXML TextArea currArtist;
+	@FXML TextArea currAlbum;
+	@FXML TextArea currYear;
 
 	//variables involving listing all songs
 	private ObservableList<Song> obsList;
