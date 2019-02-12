@@ -4,8 +4,7 @@ COMPLETED:<br />
   -save songs to json file (savedSong.json)<br />
   -display song to list view 2/12/2019 <br />
   -checking duplicates 2/12/2019 <br />
-  <br />
+  -delete song <br />
  TO-DO<br />
   -editing<br />
-  -deleting song  (now working on -bw)<br />
-  -sorting by song name<br />
+  -sorting by song name   (now working on -bw)v<br />
