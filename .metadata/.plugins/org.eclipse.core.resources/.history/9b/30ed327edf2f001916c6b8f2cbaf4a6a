@@ -116,8 +116,6 @@ public class Controller {
 					jsonArray.remove(getJsonIndex(curr.name,curr.artist));
 					updateJson();
 					obsList.remove(curr);
-					updateListView();
-					sort();
 				
 					displayAlert("Deletion", "Successfully deleted " + curr.name+ " by " + curr.artist);
 					
@@ -304,7 +302,7 @@ public class Controller {
 			currName.setText("");
 			currAlbum.setText("");
 			currYear.setText("");
-			currArtist.setText("");
+			currAlbum.setText("");
 		}
 	}
 

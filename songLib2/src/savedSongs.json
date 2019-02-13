@@ -1,34 +1,3 @@
 {
-  "songList": [
-    {
-      "name": "abc12324323",
-      "artist": "12332412",
-      "album": "",
-      "year": ""
-    },
-    {
-      "name": "abc",
-      "artist": "sdf",
-      "album": "",
-      "year": ""
-    },
-    {
-      "name": "abc",
-      "artist": "sdf2",
-      "album": "",
-      "year": ""
-    },
-    {
-      "name": "ad2",
-      "artist": "as",
-      "album": "",
-      "year": ""
-    },
-    {
-      "name": "alpha",
-      "artist": "12",
-      "album": "",
-      "year": ""
-    }
-  ]
+  "songList": []
 }

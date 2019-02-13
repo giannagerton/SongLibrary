@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane prefHeight="436.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
    <children>
@@ -59,7 +58,6 @@
                   <TextField fx:id="currArtist" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="currAlbum" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <TextField fx:id="currYear" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <TextFlow disable="true" prefHeight="200.0" prefWidth="200.0" visible="false" GridPane.rowIndex="1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" GridPane.columnIndex="1" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Album" GridPane.columnIndex="2" />

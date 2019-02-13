@@ -304,7 +304,7 @@ public class Controller {
 			currName.setText("");
 			currAlbum.setText("");
 			currYear.setText("");
-			currArtist.setText("");
+			currAlbum.setText("");
 		}
 	}
 

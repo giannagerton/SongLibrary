@@ -116,11 +116,7 @@ public class Controller {
 					jsonArray.remove(getJsonIndex(curr.name,curr.artist));
 					updateJson();
 					obsList.remove(curr);
-					updateListView();
-					sort();
-				
 					displayAlert("Deletion", "Successfully deleted " + curr.name+ " by " + curr.artist);
-					
 				}
 
 			}
@@ -147,10 +143,10 @@ public class Controller {
 			
 			String newName = currName.getText();
 			String newArtist = currArtist.getText();
-			String newYear = currYear.getText();
-			String newAlbum = currAlbum.getText();
+			String newYear = newSongYear.getText();
+			String newAlbum = newSongAlbum.getText();
 			if(newName.equals("")  || newArtist.equals("")){
-				displayAlert("Error", "Song name and artist can not be empty!");
+				displayAlert("Error", "hlaoo Song name and artist can not be empty!");
 			}else if(!newYear.equals("") && !isNumber(newYear)){
 				displayAlert("Error", "Invaild song year!");	
 			}else{
@@ -300,11 +296,6 @@ public class Controller {
 			currArtist.setText(curr.artist);
 			currAlbum.setText(curr.album);
 			currYear.setText(curr.year);
-		}else{
-			currName.setText("");
-			currAlbum.setText("");
-			currYear.setText("");
-			currArtist.setText("");
 		}
 	}
 
