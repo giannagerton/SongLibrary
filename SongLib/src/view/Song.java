@@ -1,3 +1,5 @@
+// Bandy Wang and Gianna Gerton
+
 package view;
 
 public class Song {

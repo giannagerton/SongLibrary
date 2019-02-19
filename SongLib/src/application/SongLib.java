@@ -1,14 +1,16 @@
-package view;
+// Bandy Wang and Gianna Gerton
+
+package application;
 
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import view.Controller;
 
-public class SongLibApp extends Application {
+public class SongLib extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {

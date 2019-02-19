@@ -1,3 +1,5 @@
+// Bandy Wang and Gianna Gerton
+
 package view;
 
 import javafx.collections.FXCollections;
@@ -10,9 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -61,8 +60,6 @@ public class Controller {
 	String tempAlbum;
 	String tempYear;
 	int tempIndex;
-
-
 
 
 	public void start(Stage mainStage) throws  FileNotFoundException {
@@ -210,6 +207,7 @@ public class Controller {
 				jsonTemp.addProperty("artist", artist);
 				jsonTemp.addProperty("album", album);
 				jsonTemp.addProperty("year", year);
+	
 				jsonArray.add(jsonTemp);
 				
 				updateJson();

@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane prefHeight="436.0" prefWidth="571.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
    <children>
@@ -44,10 +43,11 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="currName">
+                  <TextField fx:id="currName" GridPane.rowIndex="1">
                      <contextMenu>
                         <ContextMenu>
                           <items>
@@ -55,10 +55,13 @@
                           </items>
                         </ContextMenu>
                      </contextMenu></TextField>
-                  <TextField fx:id="currArtist" GridPane.columnIndex="1" />
-                  <TextField fx:id="currAlbum" GridPane.columnIndex="2" />
-                  <TextField fx:id="currYear" GridPane.columnIndex="3" />
-                  <TextFlow disable="true" prefHeight="200.0" prefWidth="200.0" visible="false" />
+                  <TextField fx:id="currArtist" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="currAlbum" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="currYear" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Artist" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Album" GridPane.columnIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year" GridPane.columnIndex="3" />
                </children>
             </GridPane>
             <Button fx:id="edit" layoutX="467.0" layoutY="69.0" mnemonicParsing="false" onAction="#editSong" prefHeight="25.0" prefWidth="88.0" text="Edit Song" />
